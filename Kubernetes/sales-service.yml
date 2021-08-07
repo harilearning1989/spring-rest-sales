@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: spring-rest-sales
 spec:
-  selector:
-    app: spring-rest-sales
   ports:
-    - port: 8082
+    - name: spring-rest-sales
+      port: 8082
       protocol: TCP
       targetPort: 8082
-  type: NodePort
-#type: ClusterIP
+  selector:
+    app: spring-rest-sales
+  type: ClusterIP
